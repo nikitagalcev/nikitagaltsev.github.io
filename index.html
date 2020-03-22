@@ -1,141 +1,212 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фрилансер</title>
-    <link href="styles/normalize.css" rel="stylesheet">
-    <link href="styles/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Путешествия по России</title>
+  <link href="vendor/normalize.css" rel="stylesheet">
+  <link href="pages/index.css" rel="stylesheet">
+  <style></style>
 </head>
 <body>
 <div class="page">
   <header class="header">
-    <svg class="header__logo" width="100" height="28" viewBox="0 0 100 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M21.2186 0.00146484H2.81527C1.26368 0.00146484 0 1.27004 0 2.82766V21.3024C0 22.8605 1.26368 24.1286 2.81527 24.1286H18.3894L17.6617 21.6054L19.4195 23.2325L21.0811 24.7626L24.0478 27.3408V2.82766C24.0339 1.27004 22.7707 0.00146484 21.2186 0.00146484V0.00146484ZM15.9173 17.8556C15.9173 17.8556 15.4232 17.2626 15.0108 16.7526C16.8099 16.2425 17.4968 15.126 17.4968 15.126C16.9334 15.498 16.398 15.76 15.9173 15.939C15.2304 16.229 14.5714 16.408 13.9259 16.5321C12.6074 16.7801 11.399 16.7116 10.369 16.5181C9.58596 16.3665 8.91302 16.16 8.35016 15.9255C8.03436 15.8015 7.69068 15.6495 7.34749 15.4565C7.30615 15.429 7.26481 15.4155 7.22396 15.3875C7.19656 15.374 7.18262 15.36 7.16868 15.36C6.92162 15.2225 6.78414 15.126 6.78414 15.126C6.78414 15.126 7.44362 16.215 9.18796 16.7391C8.77555 17.2626 8.26749 17.8692 8.26749 17.8692C5.23255 17.7726 4.07895 15.7875 4.07895 15.7875C4.07895 11.3892 6.05641 7.81849 6.05641 7.81849C8.03388 6.34339 9.90176 6.38488 9.90176 6.38488L10.0392 6.55039C7.56715 7.25344 6.44095 8.34252 6.44095 8.34252C6.44095 8.34252 6.74329 8.17701 7.25135 7.95649C8.72076 7.30845 9.8883 7.14294 10.369 7.08793C10.4512 7.07394 10.5199 7.06043 10.6026 7.06043C11.4399 6.94993 12.3878 6.92243 13.3765 7.03293C14.6815 7.18444 16.0822 7.57047 17.5102 8.34252C17.5102 8.34252 16.4254 7.30845 14.0908 6.6054L14.283 6.38488C14.283 6.38488 16.1644 6.34339 18.1284 7.81849C18.1284 7.81849 20.1059 11.3897 20.1059 15.7875C20.1059 15.7735 18.9522 17.7591 15.9173 17.8556ZM36.6552 5.90235H32.0956V11.0447L35.131 13.7884V8.79755H36.7514C37.7814 8.79755 38.2895 9.29407 38.2895 10.0936V13.9124C38.2895 14.7119 37.8088 15.25 36.7514 15.25H32.0817V18.1587H36.6413C39.086 18.1727 41.3797 16.9456 41.3797 14.1329V10.0246C41.3932 7.15694 39.0999 5.90235 36.6552 5.90235ZM60.5516 14.1329V9.91413C60.5516 8.39753 63.2713 8.053 64.0951 9.5696L66.6085 8.54952C65.6193 6.37089 63.8202 5.73684 62.3234 5.73684C59.8787 5.73684 57.4619 7.15694 57.4619 9.91413V14.1329C57.4619 16.9181 59.8787 18.3107 62.2686 18.3107C63.8067 18.3107 65.6472 17.5521 66.6633 15.567L63.9716 14.3259C63.3121 16.022 60.5516 15.6085 60.5516 14.1329ZM52.2428 10.4932C51.2954 10.2866 50.6633 9.94211 50.6225 9.34908C50.6773 7.92899 52.861 7.87398 54.1381 9.23858L56.1569 7.68097C54.8937 6.13686 53.4652 5.72285 51.9958 5.72285C49.7573 5.72285 47.5871 6.99143 47.5871 9.39058C47.5871 11.7202 49.3728 12.9748 51.3363 13.2783C52.339 13.4163 53.4517 13.8159 53.4238 14.5054C53.3416 15.815 50.6499 15.746 49.4276 14.2574L47.4775 16.091C48.6171 17.5661 50.1692 18.3107 51.6247 18.3107C53.8636 18.3107 56.3492 17.0146 56.4453 14.6434C56.5828 11.6512 54.413 10.8932 52.2428 10.4932ZM43.0414 18.1452H46.1177V5.90235H43.0414V18.1452ZM94.9136 5.90235H90.354V11.0447L93.3889 13.7884V8.79755H95.0098C96.0398 8.79755 96.5479 9.29407 96.5479 10.0936V13.9124C96.5479 14.7119 96.0672 15.25 95.0098 15.25H90.3401V18.1587H94.9136C97.3578 18.1727 99.6516 16.9456 99.6516 14.1329V10.0246C99.6516 7.15694 97.3578 5.90235 94.9136 5.90235ZM72.5414 5.73684C70.0141 5.73684 67.5011 7.11544 67.5011 9.94211V14.1194C67.5011 16.9181 70.028 18.3242 72.5688 18.3242C75.0957 18.3242 77.6091 16.9181 77.6091 14.1194V9.94211C77.6091 7.12943 75.0683 5.73684 72.5414 5.73684ZM74.5189 14.1194C74.5189 15.0015 73.5302 15.4565 72.5549 15.4565C71.5661 15.4565 70.5774 15.0295 70.5774 14.1194V9.94211C70.5774 9.04557 71.5387 8.56304 72.5001 8.56304C73.5027 8.56304 74.5189 8.99056 74.5189 9.94211V14.1194ZM88.651 9.94211C88.5823 7.07442 86.6322 5.91586 84.1188 5.91586H79.2434V18.1587H82.361V14.2709H82.9104L85.7391 18.1587H89.5849L86.2611 13.9539C87.7305 13.4849 88.651 12.2028 88.651 9.94163V9.94211ZM84.1736 11.5962H82.361V8.79755H84.1736C86.1102 8.79755 86.1102 11.5962 84.1736 11.5962Z" fill="white"/>
-    </svg>
-    <nav class="social-icons">
-      <ul class="social-icons__list">
-        <li class="social-icons__item">
-          <a class="social-icons__link" href="github.com" target="_blank">
-            <img class="social-icons__icon" src="images/github.svg" alt="">
-          </a>
+    <img class="header__logo" src="images/logo.svg" alt="Логотип-Россия">
+    <div class="header__lang">
+      <a class="header__link header__link_active" href="#">Ru</a>
+      <a class="header__link" href="#">En</a>
+    </div>
+  </header>
+  <main class="content">
+    <section class="lead">
+      <h1 class="lead__title">Путешествия по России</h1>
+      <p class="lead__subtitle">Настоящая страна не в выпусках новостей, а здесь.</p>
+      <figure class="lead__figure">
+        <img class="lead__image" alt="Маршрут путешествия" src="images/trip.jpg">
+        <figcaption class="lead__caption">ваша полка — верхняя</figcaption>
+      </figure>
+    </section>
+    <section class="intro">
+      <h2 class="intro__title">Чего мы там не видели?</h2>
+        <blockquote class="intro__text">По опросам ВЦИОМ, 95% россиян мечтают куда-нибудь поехать, но только 36% планируют провести отпуск в родной стране. Мол, чего мы тут, дома, не видели? На самом деле, Россия — это целая вселенная с ласковым морем юга, густыми лесами Саян и суровыми льдами плато Путорана. А ещё увидеть все эти красоты можно без миллионов на счету, загранпаспорта и многочасовых перелетов. Как, например, Вера Башмакова — смелая молодая мама, которая взяла в охапку троих детей, усадила их в свою «Ладу» и проехала 20 тысяч километров по родной стране. Мы выбрали и описали некоторые интересные места, достойные вашего отпуска.</blockquote>
+      <ul class="intro__list">
+        <li class="intro__item">
+          <p class="intro__info">Часовых поясов <span class="intro__span-accent">11</span></p>
         </li>
-        <li class="social-icons__item">
-          <a class="social-icons__link" href="twitter.com" target="_blank">
-            <img class="social-icons__icon" src="images/twitter.svg" alt="">
-          </a>
+        <li class="intro__item">
+          <p class="intro__info">Объектов природного наследия ЮНЕСКО <span class="intro__span-accent">12</span></p>
         </li>
-        <li class="social-icons__item">
-          <a class="social-icons__link" href="instagram.com" target="_blank">
-            <img class="social-icons__icon" src="images/instagram.svg" alt="">
-          </a>
+        <li class="intro__item">
+          <p class="intro__info">Объектов культурного наследия ЮНЕСКО <span class="intro__span-accent">16</span></p>
         </li>
-        <li class="social-icons__item">
-          <a class="social-icons__link" href="facebook.com" target="_blank">
-            <img class="social-icons__icon" src="images/facebook.svg" alt="">
-          </a>
+        <li class="intro__item">
+          <p class="intro__info">Природных заповедников <span class="intro__span-accent">105</span></p>
+        </li>
+        <li class="intro__item">
+          <p class="intro__info">Аэропортов <span class="intro__span-accent">241</span></p>
         </li>
       </ul>
+    </section>
+    <section class="photo-grid">
+      <img class="photo-grid__item" src="images/train.jpg" alt="Плацкарт круто">
+      <img class="photo-grid__item" src="images/atharva-tulsi.jpg" alt="Снежные вершины гор">
+      <img class="photo-grid__item" src="images/tuman.jpg" alt="Утренний туман">
+      <img class="photo-grid__item" src="images/sochi.jpg" alt="Сочинский туман">
+      <img class="photo-grid__item" src="images/arisa.jpg" alt="Ленд Ровер на льду">
+      <img class="photo-grid__item" src="images/baikal.jpg" alt="Байкал">
+      <img class="photo-grid__item" src="images/elbrus.jpg" alt="Зуб софруджу">
+      <img class="photo-grid__item" src="images/kondratiev.jpg" alt="Снимок Кондраьева">
+      <img class="photo-grid__item" src="images/kamchatka-1.jpg" alt="Камчатский туман">
+      <img class="photo-grid__item" src="images/kamchatka-2.jpg" alt="Камчатский закат">
+      <img class="photo-grid__item" src="images/baikal-2.jpg" alt="Байкал - вид сверху">
+      <img class="photo-grid__item" src="images/ergaki.jpg" alt="Ергакский туман">
+    </section>
+    <section class="places">
+        <article class="place">
+          <h2 class="place__title">Куршская коса</h2>
+          <div class="website-hub website-hub_align">
+            <p class="website-hub__heading">URL</p>
+            <a class="website-hub__url" href="http://park-kosa.ru/" target="_blank">park-kosa.ru</a>
+          </div>
+          <img class="place__image" src="images/kosa.jpg" alt="Куршская коса">
+          <div class="place__text">
+            <p class="place__paragraph">Здесь, посреди лесов и песчаных дюн, вы сможете увидеть два водных горизонта — спокойного Куршского залива с одной стороны и подёрнутого рябью волн Балтийского моря с другой. Уникальная природная зона на краю российского анклава.</p>
+            <p class="place__paragraph">На этом Калининградская область не заканчивается. Для путешественника и исследователя там же по соседству — самая западная точка России, Балтийская коса, — и немецкое наследие россыпи небольших приморских городов. Атмосфера здешних мест исключает суету, окуная в спокойствие природы и запах стального, прохладного моря.</p>
+          </div>
+        </article>
+        <article class="place">
+          <h2 class="place__title place__title_media-padding">Кольский</h2>
+          <div class="website-hub">
+            <p class="website-hub__heading">URL</p>
+            <a class="website-hub__url" href="https://yourshot.nationalgeographic.com/photos/?keywords=kolskiy" target="_blank">National Geographic</a>
+          </div>
+          <img class="place__image" src="images/kolsky.jpg" alt="Кольский">
+          <div class="place__text">
+            <p class="place__paragraph">Почти весь полуостров находится за Полярным кругом. Саамская тундра, от которой на юг — тайга, а на север — Ледовитый океан, прикидывающийся Баренцевым морем.</p>
+            <p class="place__paragraph">Возможно, вы смотрели Звягинцева и даже слышали историю арктического фестиваля в Териберке. Возможно, слово «Хибины» не осталось под снегом школьных воспоминаний об уроках географии. Возможно, вы не интересовались пронизывающей земную кору сверхглубокой скважиной, а от апатитов вас давно накрывает апатия. Но ваша мечта увидеть северное сияние начинает сбываться с билетом в Мурманск.</p>
+          </div>
+        </article>
+        <article class="place">
+          <h2 class="place__title place__title_media-padding">Алтай</h2>
+          <div class="website-hub">
+            <p class="website-hub__heading">URL</p>
+            <a class="website-hub__url" href="https://www.facebook.com/vera.bashmakova/posts/10156011613718822" target="_blank">Facebook</a>
+          </div>
+          <img class="place__image" src="images/altai.jpg" alt="Не совсем дикий Алтай">
+          <div class="place__text">
+            <p class="place__paragraph">Алтай — одно из красивейших мест в России. В первую очередь из-за гор: если ехать вдоль хребта, вы увидите склоны, усыпанные соснами, горные реки и озёра. А если вы откроете в автомобиле окна, сможете познакомиться с невидимым чудом здешних мест — горным воздухом.</p>
+            <p class="place__paragraph">Климат на Алтае умеренный, поэтому ехать сюда лучше всего летом. Так вы увидите всё разнообразие местной флоры и фауны. По лесам Алтая бродят лоси, над хребтами летают орлы, а на равнинах пасутся косули. И знаменитые манулы — тоже обитатели Алтайского края.</p>
+          </div>
+        </article>
+        <article class="place">
+          <h2 class="place__title">Зимний Байкал</h2>
+          <div class="website-hub website-hub_align">
+            <p class="website-hub__heading">URL</p>
+            <a class="website-hub__url" href="https://vk.com/baikalmile" target="_blank">vk.com/baikalmile</a>
+          </div>
+          <img class="place__image" src="images/winter-baikal.jpg" alt="Ледяной Байкал">
+          <div class="place__text">
+            <p class="place__paragraph">Всем известен Байкал как крупнейшее озеро в мире. Многие также знают, что это самый большой источник пресной воды и одно из красивейших мест в России.</p>
+            <p class="place__paragraph">Конечно, это всё так. Но Байкал ещё идеальное место для соревнований по скийорингу. Это такой вид спорта, когда лыжник привязывает себя к мотоциклу, и тандем старается развить как можно бóльшую скорость на льду. В марте 2019 года на фестивале «Байкальская миля» был поставлен мировой рекорд — 197.011 км/ч.</p>
+          </div>
+        </article>
+        <article class="place">
+          <h2 class="place__title place__title_media-padding">Карелия</h2>
+          <div class="website-hub">
+            <p class="website-hub__heading">URL</p>
+            <a class="website-hub__url" href="http://vodlozero.ru/" target="_blank">vodlozero.ru/</a>
+          </div>
+          <img class="place__image" src="images/karelia.jpg" alt="Карелия">
+          <p class="place__paragraph">Сибирь заканчивается не на Урале, а в Карелии: образующая тайгу сибирская лиственница не растёт западнее Водлозера. Зато здесь она вымахивает на 30 метров — леса карельских национальных парков из-за непроходимых болот никогда не знали топора. Некоторым соснам уже больше чем полтысячелетия. Прикоснитесь к живому существу, видевшему солнце раньше, чем увидал его Иван Грозный. В девственном лесу на сотню километров не встретишь тропы. А на редких тропинках деревья в паре метров от земли помечены медвежьими когтями. Чтобы все знали, кто тут хозяин.</p>
+        </article>
+    </section>
+    <section class="video">
+      <h2 class="section-title">В глубины Земли и&nbsp;в&nbsp;дальний космос</h2>
+      <p class="section-subtitle">Видео от студии Stereotactic о местах в России, где ведутся фундаментальные исследования</p>
+      <div class="video__container">
+        <a class="video-point video-point_kamchatka" href="https://vimeo.com/81106671" target="_blank">
+          <div class="video-point__link video-point__link_media-margin"></div>
+          <p class="video-point__duration">6:30</p>
+          <h3 class="video-point__title">Colors of Kamchatka</h3>
+          <p class="video-point__subtitle">Director: Pavel Karykhalin</p>
+        </a>
+        <a class="video-point video-point_observatory" href="https://vimeo.com/290675450" target="_blank">
+          <div class="video-point__link" ></div>
+          <p class="video-point__duration">24:45</p>
+          <h3 class="video-point__title">Обсерватория | Observatory</h3>
+          <p class="video-point__subtitle">Director: Alexander Khudokon</p>
+        </a>
+      </div>
+    </section>
+    <section class="comments">
+      <h2 class="section-title section-title_line-height">Фотографы, снимающие Россию</h2>
+      <p class="section-subtitle">Природа и люди вдохновили их работы, удостоенные наград на международных конкурсах</p>
+      <div class="comments__container">
+        <div class="comment">
+          <img class="comment__image" alt="Виктор Лягушкин" src="images/lyagushkin.jpg">
+          <blockquote class="comment__quote">«Если вам кажется, что в России ничего не происходит, то просто выгляньте “наружу”…»
+          </blockquote>
+          <p class="comment__author">Виктор Лягушкин</p>
+        </div>
+        <div class="comment">
+          <img class="comment__image" alt="Иван Хафизов" src="images/hafizov.jpg">
+          <blockquote class="comment__quote">«Если в город едут туристы — неважно за чем они туда едут: за шамбалой или фрески Рублева искать, или на родину Тарковского — туристы обеспечивают любой город молодёжью, рабочими местами и в конечном счёте наполняют его жизнью.»</blockquote>
+          <p class="comment__author">Иван Хафизов</p>
+        </div>
+        <div class="comment">
+          <img class="comment__image" alt="Сергей Максимишин" src="images/maksimshin.jpg">
+          <blockquote class="comment__quote">«Ты приезжаешь, и люди рассказывают тебе, как им плохо. А когда ты покажешь, как им плохо, то ты сволочь и всё очернил.»</blockquote >
+          <p class="comment__author">Сергей Максимишин</p>
+        </div>
+      </div>
+    </section>
+    <section class="cover">
+      <a class="cover__link" href="https://stampsy.com/na-elektrichkakh-do-baikala" target="_blank">
+        <h2 class="cover__title">До Байкала «на&nbsp;собаках»</h2>
+        <p class="cover__subtitle">По мотивам учебной темы о Транссибе и iframes — путешествие от столицы до Байкала на электричках.</p>
+      </a>
+    </section>
+  </main>
+  <footer class="footer">
+    <nav class="footer__column">
+      <ul class="footer__column-links">
+        <li class="footer__column-item">
+          <a class="footer__column-link" href="https://yandex.ru/maps/">Карты</a>
+        </li>
+        <li class="footer__column-item">
+          <a class="footer__column-link" href="https://yandex.ru/pogoda/">Погода</a>
+        </li>
+        <li class="footer__column-item">
+          <a class="footer__column-link" href="https://rasp.yandex.ru/">Расписание</a>
+        </li>
+        <li class="footer__column-item">
+          <a class="footer__column-link" href="https://calendar.yandex.ru/">Календарь</a>
+        </li>
+        <li class="footer__column-item">
+          <a class="footer__column-link" href="https://travel.yandex.ru">Путешествия</a>
+        </li>
+      </ul>
+      <p class="footer__copyright">© 2020. Nikita Galtsev</p>
     </nav>
-  </header>
-  <section class="hero">
-    <div class="hero__info">
-      <p class="hero__spec">Фрилансер</p>
-      <h1 class="hero__person">Петр Федоров</h1>
-      <p class="hero__text">Разрабатываю сайты для малого и среднего бизнеса. У меня можно заказать дизайн и верстку небольшого сайта или интернет-магазина</p>
-      <button class="button" type="button">Бесплатная консультация</button>
-    </div>
-    <img class="hero__image" src="images/avatar.jpg" alt="ДИТЯ БЕЛАРУСИ">
-  </section>
-  <section class="features">
-    <h2 class="section__title">Со мной удобно работать</h2>
-    <div class="features__container">
-      <div class="features__item">
-        <img class="features__image" src="images/offer-img.png" alt="">
-        <h3 class="features__title">По договору</h3>
-        <p class="features__text">Предоставлю все документы для бухгалтерии: договоры, счета и акты. Работаю как ИП без НДС.</p>
-      </div>
-      <div class="features__item">
-        <img class="features__image" src="images/deadline-img.png" alt="">
-        <h3 class="features__title">Точно в срок</h3>
-        <p class="features__text">В договоре прописана моя  ответственность за срок проекта. Если просрочу — плачу неустойку. </p>
-      </div>
-      <div class="features__item">
-        <img class="features__image" src="images/agreement-img.png" alt="">
-        <h3 class="features__title">Ценник под вас</h3>
-        <p class="features__text">Если у вас нетиповой проект, сделаю рассчет цены за работу и объясню, как складывается цена.</p>
-      </div>
-      <div class="features__item">
-        <img class="features__image" src="images/steps-img.png" alt="">
-        <h3 class="features__title">Премежуточные итоги</h3>
-        <p class="features__text">Показываю работу поэтапно, а не в последий момент перед крайним сроком. </p>
-      </div>
-      <div class="features__item">
-        <img class="features__image" src="images/storage-img.png" alt="">
-        <h3 class="features__title">Хостинг и домен </h3>
-        <p class="features__text">Если мы договорились о цене проекта, в неё входит всё: домен и хостинг на год + SSL сертификат.</p>
-      </div>
-      <div class="features__item">
-        <img class="features__image" src="images/conversation-img.png" alt="">
-        <h3 class="features__title">Не брошу после сдачи</h3>
-        <p class="features__text">Научу вас или вашего сотрудника пользоваться сайтом, запишу видео-инструкции.</p>
-      </div>
-    </div>
-  </section>
-  <footer class="contacts">
-    <h2 class="section__title section__title_place_footer">Свяжитесь со мной</h2>
-    <div class="contacts__container">
-      <form class="contacts__form">
-        <p class="contacts__text">Можете просто оставить заявку, я позвоню вам сегодня</p>
-        <input class="contacts__input contacts__input_user" type="text" placeholder="Ваше имя">
-        <input class="contacts__input contacts__input_phone" type="text" placeholder="Ваш телефон">
-        <button class="button button_place_footer" type="button">Бесплатная консультация</button>
-      </form>
-      <div class="contacts__hub">
-        <div class="contacts__group">
-          <p class="contacts__title">Телефон</p>
-          <p class="contacts__info">+7 999 123 45 67</p>
-        </div>
-        <div class="contacts__group">
-          <p class="contacts__title">Почта</p>
-          <p class="contacts__info">ivanov@mail.ru</p>
-        </div>
-        <div class="contacts__group">
-          <p class="contacts__title">Соцсети</p>
-          <a class="contacts__link" href="t.me/ivanov" target="_blank">t.me/ivanov</a>
-          <a class="contacts__link" href="vk.me/ivanov" target="_blank">vk.me/ivanov</a>
-          <a class="contacts__link" href="fb.me/ivanov" target="_blank">fb.me/ivanov</a>
-        </div>
-        <nav class="social-icons social-icons_place_footer">
-          <ul class="social-icons__list social-icons__list_place_footer">
-            <li class="social-icons__item">
-              <a class="social-icons__link social-icons__link_place_footer" href="github.com" target="_blank">
-                <img class="social-icons__icon" src="images/github.svg" alt="">
-              </a>
-            </li>
-            <li class="social-icons__item">
-              <a class="social-icons__link social-icons__link_place_footer" href="twitter.com" target="_blank">
-                <img class="social-icons__icon" src="images/twitter.svg" alt="">
-              </a>
-            </li>
-            <li class="social-icons__item">
-              <a class="social-icons__link social-icons__link_place_footer" href="instagram.com" target="_blank">
-                <img class="social-icons__icon" src="images/instagram.svg" alt="">
-              </a>
-            </li>
-            <li class="social-icons__item">
-              <a class="social-icons__link social-icons__link_place_footer" href="facebook.com" target="_blank">
-                <img class="social-icons__icon" src="images/facebook.svg" alt="">
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="contracts__confidential-container">
-          <a class="contacts__confidential" href="#" target="_blank">Политика конфиденциальности</a>
-        </div>
-      </div>
-    </div>
   </footer>
 </div>
 </body>
 </html>
+
+<!-- В целом по работе:
+    Отлично!
+
+    Вы используете правильные БЭМ наименования
+    Код легко читается
+    Вы не используете лишних оберток
+    Использованы семантичные теги
+    Правильно составлены мета теги в head
+    Правильная структура папок в проекте
+    Верстка соответствует макету
+    Вы прекрасно адаптировали сайт под все берейк поинты
+
+    Что нужно исправить:
+
+    Прекрасная работа, но присутствуют ошибки валидации, исправьте их. -- Исправлено!
+
+-->
