@@ -1,0 +1,32 @@
+@import url('__title/place__title.css');
+@import url('__image/place__image.css');
+@import url('../website-hub/website-hub.css');
+@import url('__paragraph/place__paragraph.css');
+
+.place {
+  margin-bottom: 72px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.place:last-of-type {
+  margin-bottom: 0;
+}
+
+
+@media (max-width: 1024px) {
+  .place {
+    grid-column-gap: 1.5rem;
+    grid-template-columns: calc(50% - 0.75rem) calc(50% - 0.75rem);
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  .place {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,12 @@
+@media(max-width: 800px) {
+  .place__title.place__title_media-padding {
+    padding-top: 10px;
+  }
+}
+
+
+@media(max-width: 768px) {
+  .place__title.place__title_media-padding {
+    padding: 0;
+  }
+}

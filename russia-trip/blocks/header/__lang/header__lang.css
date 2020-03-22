@@ -1,0 +1,7 @@
+@import url('__link/header__link.css');
+
+.header__lang {
+  display: flex;
+  align-items: center;
+  box-sizing: content-box;
+}

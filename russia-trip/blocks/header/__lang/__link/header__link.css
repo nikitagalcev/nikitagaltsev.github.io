@@ -1,0 +1,22 @@
+@import url('_active/header__link_active.css');
+
+.header__link {
+  text-decoration: none;
+  font-size: 1.5em;
+  line-height: 23px;
+  font-weight: normal;
+  color: #ffffff;
+  margin-left: 18px;
+}
+
+.header__link:hover {
+  opacity: 0.6;
+  transition: .5s ease;
+}
+
+
+@media (max-width: 425px) {
+  .header__link {
+    font-size: 1.125em;
+  }
+}

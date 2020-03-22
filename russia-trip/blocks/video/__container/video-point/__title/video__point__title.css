@@ -1,0 +1,20 @@
+.video-point__title {
+  width: 322px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 2.79%;
+  margin-left: 5%;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 39px;
+  color: #FFFFFF;
+  z-index: 2;
+}
+
+@media (max-width: 769px) {
+  .video-point__title{
+    font-size: 24px;
+    line-height: 26px;
+  }
+}

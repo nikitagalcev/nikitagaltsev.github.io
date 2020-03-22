@@ -1,0 +1,9 @@
+@import url('__text/intro__text.css');
+@import url('__author-info/intro__author-info.css');
+
+.intro__content-row {
+  display: flex;
+  margin-bottom: 35px;
+  justify-content: space-between;
+  overflow: hidden;
+}

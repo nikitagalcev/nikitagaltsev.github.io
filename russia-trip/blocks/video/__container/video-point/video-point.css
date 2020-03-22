@@ -1,0 +1,24 @@
+@import url('__link/video-point_link.css');
+@import url('__title/video__point__title.css');
+@import url('__subtitle/video-point__subtitle.css');
+@import url('__duration/video-point__duration.css');
+@import url('_kamchatka/video-point_kamchatka.css');
+@import url('_observatory/video-point_observatory.css');
+
+.video-point {
+  display: flex;
+  flex-direction: column;
+  width: 583px;
+  max-height: 323px;
+  border-radius: 5px;
+  text-align: left;
+  text-decoration: none;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media(max-width: 665px) {
+  .video-point {
+    max-width: 100%;
+  }
+}

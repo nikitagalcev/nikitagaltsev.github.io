@@ -1,0 +1,20 @@
+.page {
+  margin: 0 auto;
+  padding-top: 1.875em;
+  max-width: 100%;
+  background-color: #2A2C2F;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+@media (max-width: 425px) {
+  .page {
+    padding-top: 1em;
+  }
+}

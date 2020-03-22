@@ -1,0 +1,13 @@
+@import url('__column/footer__column.css');
+
+.footer {
+  max-width: 1184px;
+  margin: 0 auto;
+  padding-bottom: 48px;
+}
+
+@media (max-width: 500px) {
+  .footer {
+    max-width: 90%;
+  }
+}

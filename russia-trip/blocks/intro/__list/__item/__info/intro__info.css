@@ -1,0 +1,12 @@
+.intro__info {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.intro__span-accent {
+  font-weight: normal;
+}

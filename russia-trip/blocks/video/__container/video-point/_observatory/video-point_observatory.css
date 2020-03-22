@@ -1,0 +1,18 @@
+.video-point.video-point_observatory {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%), url('../../../../../images/observatory.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+
+.video-point.video-point_observatory:hover:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 5px;
+}

@@ -1,0 +1,28 @@
+.video-point.video-point_kamchatka {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 100%, rgba(0, 0, 0, 0.5) 100%), url('../../../../../images/kamchatka.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-right: 18px;
+}
+
+.video-point.video-point_kamchatka:hover:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 5px;
+}
+
+
+
+@media(max-width: 665px) {
+  .video-point.video-point_kamchatka {
+    margin-right: 0;
+    margin-bottom: 8px;
+    max-width: 100%;
+  }
+}

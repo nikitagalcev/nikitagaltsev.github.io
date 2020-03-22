@@ -1,0 +1,7 @@
+@import url('__author/intro__author.css');
+
+.intro__author-info {
+  display: flex;
+  flex-direction: column;
+  width: 283px;
+}

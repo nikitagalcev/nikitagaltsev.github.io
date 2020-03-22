@@ -1,0 +1,41 @@
+@import url('_line-height/section-title_line-height.css');
+
+.section-title {
+  max-width: 800px;
+  margin: 0 auto 48px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 78px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+@media (max-width: 769px) {
+  .section-title {
+    max-width: 68%;
+    font-size: 42px;
+    line-height: 46px;
+    margin-bottom: 1.8rem;
+  }
+}
+@media (max-width: 450px) {
+  .section-title {
+    font-size: 32px;
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 426px) {
+  .section-title {
+    max-width: 80%;
+    font-size: 32px;
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 395px) {
+  .section-title {
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,12 @@
+.intro__author {
+  margin: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 16px;
+  color: #FFFFFF;
+}
+
+.intro__span {
+  font-weight: bold;
+}

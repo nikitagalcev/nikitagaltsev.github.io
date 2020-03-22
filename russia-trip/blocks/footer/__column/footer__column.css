@@ -1,0 +1,16 @@
+@import url('__column-links/footer__column-links.css');
+@import url('__copyright/footer__copyright.css');
+
+.footer__column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+@media (max-width: 500px) {
+  .footer__column {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

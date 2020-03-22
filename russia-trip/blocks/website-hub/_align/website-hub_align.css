@@ -1,0 +1,9 @@
+.website-hub.website-hub_align {
+  align-self: center;
+}
+
+@media (max-width: 800px) {
+  .website-hub.website-hub_align {
+    padding-bottom: 60px;
+  }
+}

@@ -1,0 +1,38 @@
+.section-subtitle {
+  max-width: 54.05%;
+  margin: 0 auto 72px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+  .section-subtitle {
+    max-width: 88.89%;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .section-subtitle {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+@media (max-width: 425px) {
+  .section-subtitle {
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 1.5rem;
+  }
+}
+/* 
+@media (max-width: 376px) {
+  .section-subtitle {
+    margin-bottom: 1.5rem;
+  }
+} */

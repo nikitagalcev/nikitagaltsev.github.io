@@ -1,0 +1,10 @@
+@import url('../section-title/section-title.css');
+@import url('../section-subtitle/section-subtitle.css');
+@import url('__container/comments__container.css');
+
+.comments {
+  max-width: 1184px;
+  margin: 0 auto;
+  padding-bottom: 102px;
+  text-align: center;
+}

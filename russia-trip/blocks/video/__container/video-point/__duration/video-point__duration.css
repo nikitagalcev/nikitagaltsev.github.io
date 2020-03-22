@@ -1,0 +1,14 @@
+.video-point__duration {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 13px;
+  letter-spacing: 0.3em;
+  color: #FFFFFF;
+  /* margin: 0 auto 12px 30px; */
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 3.72%;
+  margin-left: 5%;
+  z-index: 2;
+}

@@ -1,0 +1,13 @@
+.intro__text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+.intro__text:nth-child(1) {
+  margin-right: 18px;
+  width: 683px;
+}

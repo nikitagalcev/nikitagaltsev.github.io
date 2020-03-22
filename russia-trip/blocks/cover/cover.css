@@ -1,0 +1,8 @@
+@import url('__link/cover__link.css');
+
+.cover {
+  max-height: 594px;
+  max-width: 1184px;
+  margin: 0 auto;
+  padding-bottom: 160px;
+}

@@ -1,0 +1,19 @@
+@import url('__info/intro__info.css');
+
+.intro__info-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.intro__info-list:nth-child(2n) {
+  font-weight: normal;
+}
+
+
+@media (max-width: 426px) {
+  .intro__info-list {
+    font-size: 12px;
+    line-height: 19px;
+  }
+}

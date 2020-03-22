@@ -1,0 +1,18 @@
+@import url('__column-link/footer_column-link.css');
+
+.footer__column-item {
+  margin: 0 18px 0 0;
+  list-style: none;
+}
+
+@media(max-width: 500px) {
+  .footer__column-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media(max-width: 500px) {
+  .footer__column-item:last-of-type {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,13 @@
+.website-hub__url {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 30px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+}
+
+.website-hub__url:hover {
+  opacity: 0.6;
+  transition: .5s ease;
+}

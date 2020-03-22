@@ -1,0 +1,18 @@
+@import url('_media-margin/video-point__link_media-margin.css');
+
+.video-point__link {
+  background-image: url('../../../../../images/icon_play.svg');
+  margin-top: 5%;
+  margin-right: auto;
+  margin-bottom: calc(29.1% - 17%);
+  margin-left: 5%;
+  z-index: 2;
+  min-width: 41px;
+  min-height: 41px;
+}
+
+@media (max-width: 769px) {
+  .video-point__link {
+    margin-bottom: 4.7%;
+  }
+}

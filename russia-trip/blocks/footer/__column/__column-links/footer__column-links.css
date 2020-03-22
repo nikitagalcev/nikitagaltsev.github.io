@@ -1,0 +1,14 @@
+@import url('__column-item/footer__column-item.css');
+
+.footer__column-links {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 500px) {
+  .footer__column-links {
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+}

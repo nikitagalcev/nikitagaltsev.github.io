@@ -1,0 +1,21 @@
+@import url('__heading/website-hub__heading.css');
+@import url('__url/website-hub__url.css');
+@import url('_align/website-hub_align.css');
+@import url('_width/website-hub_width.css');
+
+.website-hub {
+  width: 484px;
+  align-self: baseline;
+}
+
+@media (max-width: 1024px) {
+  .website-hub {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .website-hub {
+    display: none;
+  }
+}

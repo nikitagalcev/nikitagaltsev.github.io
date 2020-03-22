@@ -1,0 +1,7 @@
+@import url('__column-link/footer_column-link.css');
+
+.footer__column-links {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}

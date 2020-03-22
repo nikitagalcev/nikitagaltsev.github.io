@@ -1,0 +1,28 @@
+.footer__column-link {
+  margin: 0;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 41px;
+  color: #FFFFFF;
+}
+
+.footer__column-link:hover {
+  opacity: 0.6;
+  transition: .5s ease;
+}
+
+@media (max-width: 769px) {
+  .footer__column-link {
+    font-size: 16px;
+    line-height: 27px;
+  }
+}
+
+@media(max-width: 500px) {
+  .footer__column-link {
+    font-size: 24px;
+    line-height: 31px;
+  }
+}

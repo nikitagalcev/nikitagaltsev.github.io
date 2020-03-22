@@ -1,0 +1,19 @@
+.video-point__subtitle {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 15px;
+  color: #FFFFFF;
+  margin: 0 auto 0 30px;
+  margin-top: 0;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  z-index: 2;
+}
+
+@media (max-width: 769px) {
+  .video-point__subtitle {
+    margin-bottom: 2%;
+  }
+}
