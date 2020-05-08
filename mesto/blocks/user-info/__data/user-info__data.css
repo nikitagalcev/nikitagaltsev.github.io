@@ -7,5 +7,8 @@
   .user-info__data {
     margin: 20px 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

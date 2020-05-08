@@ -18,38 +18,57 @@
         <div class="user-info__data">
           <h1 class="user-info__name">Jaques Causteau</h1>
           <p class="user-info__job">Sailor, Researcher</p>
+          <button class="button user-info__edit-button" type="button">Edit</button>
         </div>
         <button class="button user-info__button">+</button>
       </div>
     </div>
-    <div class="places-list root__section">
 
-      <!-- Пример вёрстки карточки: -->
+    <div class="places-list root__section"></div>
 
-      <!-- <div class="place-card">
-        <div class="place-card__image" style="background-image: url(https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg)">
-          <button class="place-card__delete-icon"></button>
-        </div>
-        <div class="place-card__description">
-          <h3 class="place-card__name">Камчатка</h3>
-          <button class="place-card__like-icon"></button>
-        </div>
-      </div> -->
-
-      <!-- конец примера. -->
-
-    </div>
-    <div class="popup">
+    <div class="popup popup_person">
       <div class="popup__content">
         <img src="./images/close.svg" alt="" class="popup__close">
-        <h3 class="popup__title">Новое место</h3>
-        <form class="popup__form" name="new">
-            <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название">
-            <input type="text" name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку">
-            <button type class="button popup__button">+</button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form" name="profile" novalidate>
+          <div class="input-container input-container_person">
+            <input id="name" type="text" minlength="2" maxlength="30" name="name" class="popup__input popup__input_type_person-name" required>
+            <span id="error-name" class="error-message"></span>
+          </div>
+          <div class="input-container input-container_person">
+            <input id="about" type="text" minlength="2" maxlength="30" name="about" class="popup__input popup__input_type_about" required>
+            <span id="error-about" class="error-message"></span>
+          </div>
+          <button type class="button popup__button popup__button_person popup__button_active">Сохранить</button>
         </form>
       </div>
     </div>
+
+    <div class="popup popup_place">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form" name="place" novalidate>
+          <div class="input-container ">
+            <input id="place" type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" required>
+            <span id="error-place" class="error-message"></span>
+          </div>
+          <div class="input-container">
+            <input id="link" type="url" name="link" class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку" required>
+            <span id="error-link" class="error-message"></span>
+          </div>
+            <button type class="button popup__button popup__button_place">+</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_image">
+      <div class="popup__image-container">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <img class="popup__image-open" alt="">
+      </div>
+    </div>
+
   </div>
 </body>
 

@@ -13,3 +13,9 @@
 .popup__input:last-of-type {
   margin-bottom: 0;
 }
+
+.error-message {
+  color: #FF0000;
+  font-size: 12px;
+  line-height: 15px;
+}
