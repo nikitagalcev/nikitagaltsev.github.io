@@ -1,314 +1,178 @@
-const initialCards = [
-  {
-    name: 'Barcelona',
-    link: 'https://images.unsplash.com/photo-1587789202069-f57c846b85db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80'
-  },
-  {
-    name: 'Maldives',
-    link: 'https://images.unsplash.com/photo-1587578075208-f206676d9860?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=802&q=80'
-  },
-  {
-    name: 'Shanghai',
-    link: 'https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-  },
-  {
-    name: 'Langjokull',
-    link: 'https://images.unsplash.com/photo-1482778090591-caf9a0149412?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
-  },
-  {
-    name: 'Cambodia',
-    link: 'https://images.unsplash.com/photo-1540525080980-b97c4be3c779?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
-  },
-  {
-    name: 'London',
-    link: 'https://images.unsplash.com/photo-1472725485116-45d54945b877?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1142&q=80'
-  },
-  {
-    name: 'Moulton Falls',
-    link: 'https://images.unsplash.com/photo-1465021696408-57e53e164d0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80'
-  },
-  {
-    name: 'Sri Lanka',
-    link: 'https://images.unsplash.com/photo-1586870336143-d652f69d44c9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
-  },
-  {
-    name: 'Rheinland-Pfalz',
-    link: 'https://images.unsplash.com/photo-1574013573452-2d89828155a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
-  },
-  {
-    name: 'Kyoto',
-    link: 'https://images.unsplash.com/photo-1558159857-6282096da77b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80'
-   }
-];
-
-// Декларация переменных
-const placesContainer = document.querySelector('.places-list');
-
-const formPlace = document.forms.place;
-const formPerson = document.forms.profile;
-
-const inputPlaceName = formPlace.elements.name;
-const inputPlaceLink = formPlace.elements.link;
-const inputPersonName = formPerson.elements.name;
-const inputPersonAbout = formPerson.elements.about;
-
-const popupPerson = document.querySelector('.popup_person');
-const popupPlace = document.querySelector('.popup_place');
-const popupImage = document.querySelector('.popup_image');
-
-const userInfoName = document.querySelector('.user-info__name');
-const userInfoJob = document.querySelector('.user-info__job');
-const personButton = document.querySelector('.popup__button_person');
-const placeButton = document.querySelector('.popup__button_place');
-
-const errorMessages = {
-  empty: 'Это обязательное поле',
-  tooShort: 'Должно быть от 2 до 30 символов',
-  url: 'Здесь должна быть ссылка'
-};
-
-const customCard = {
-  name: '',
-  link: ''
-};
-
-const personInfo = {
-  name: '',
-  about: ''
-};
-
-
-// Функции
-// Создание карточки
-const createPlaceCard = function() {
-  const markup = `
-    <div class="place-card">
-      <div class="place-card__image">
-        <button class="place-card__delete-icon"></button>
-      </div>
-      <div class="place-card__description">
-        <h3 class="place-card__name"></h3>
-        <button class="place-card__like-icon"></button>
-      </div>
-    </div>
-  `;
-
-  const placeCard = document.createElement('div');
-  placeCard.insertAdjacentHTML('afterbegin', markup);
-  /*REVIEW. Отлично, что функция createPlaceCard отвечает только за создание шаблона карточки, а добавление карточки к общему списку
-  происходит в другой функции. Это соответствует принципу единственной ответственности функции. Такие функции, независящие от размётки
-  страницы, можно переиспользовать в других проектах. */
-  return placeCard.firstElementChild;
-};
-
-
-// popup для изображений
-const imagePopup = function(event) {
-  const backgroundImage = event.target.style.backgroundImage.split('').slice(5, length-2).join('');
-  document.querySelector('.popup__image-open').setAttribute('src', backgroundImage);
-  showPopup(popupImage);
-}
-
-// Отрисовка карточки и определение её элементов
-const renderPlaceCard = function(item) {
-  const newPlaceCard = createPlaceCard();
-  newPlaceCard.querySelector('.place-card__image').setAttribute('style', `background-image: url(${item['link']})`);
-  newPlaceCard.querySelector('.place-card__name').textContent = item['name'];
-
-  const likeButton = newPlaceCard.querySelector('.place-card__like-icon');
-  const deleteButton = newPlaceCard.querySelector('.place-card__delete-icon');
-
-  /*REVIEW. Можно лучше. Обработчиками событий карточки лучше делать именованные функции, а не безымянные, чтобы эти обработчики можно было удалять при удалении самой карточки - это будет обязательным в 8-м задании.*/
+(function () {
+  const placesContainer = document.querySelector('.places-list');
+  const template = document.querySelector('#place-template').content;
+  const formPlace = document.forms.place;
+  const formPerson = document.forms.profile;
   
-  // Исправил, также вынес функции из тела renderPlaceCard 
-
-  deleteButton.addEventListener('click', deleteCard);
-  likeButton.addEventListener('click', likeCard);
-  newPlaceCard.querySelector('.place-card__image').addEventListener('click', imagePopup);
-
-  placesContainer.appendChild(newPlaceCard);
-};
-
-function deleteCard() {
-  event.target.closest('.place-card').remove();
-  event.stopPropagation();
-};
-
-function likeCard() {
-  event.target.classList.toggle('place-card__like-icon_liked');
-};
+  const userInfoName = document.querySelector('.user-info__name');
+  const userInfoJob = document.querySelector('.user-info__job');
+  const inputPersonName = formPerson.elements.name;
+  const inputPersonJob = formPerson.elements.about;
+  const inputPlaceName = formPlace.elements.name;
+  const inputPlaceLink = formPlace.elements.link;
 
 
-// Добавление кастомной карточки
-const userPlaceCard = function() {
-  customCard.name = inputPlaceName.value;
-  customCard.link = inputPlaceLink.value;
-  initialCards.push(customCard);
-  formPlace.reset();
-  renderPlaceCard(initialCards[initialCards.length-1]);
-};
+  const popupPerson = new Popup(document.querySelector('.popup_person'));
+  const popupPlace = new Popup(document.querySelector('.popup_place'));
+  const popupImage = new ImagePopup(document.querySelector('.popup_image'));
 
-// Инициализация пользователя
-const changeUserInfo = function() {
-  document.querySelector('.popup__input_type_person-name').setAttribute('value', userInfoName.textContent);
-  document.querySelector('.popup__input_type_about').setAttribute('value', userInfoJob.textContent);
-};
+  const userData = {
+    name: 'Jaques Causteau',
+    job: 'Sailor, Researcher'
+  }
 
-// Изменение пользователя
-const person = function() {
-  personInfo.name = inputPersonName.value;
-  personInfo.about = inputPersonAbout.value;
-  formPerson.reset();
-  userInfoName.textContent = personInfo.name;
-  userInfoJob.textContent = personInfo.about;
-  changeUserInfo();
-};
+  const userInfo = new UserInfo(userInfoName, userInfoJob, inputPersonName, inputPersonJob, userData);
 
-// Отображение попапа
+  userInfo.updateUserInfo();
 
-const showPopup = function(popup) {
-  /*REVIEW. Надо исправить. Нельзя обращаться к DOM-элементам по индексам. Это сильно осложняет сопровождение и расширении проекта. При добавлении
-  ещё одного всплывающего окна формы (а это будет в 9-м задании), Вы вряд ли избежите проверки существующего кода, которая будет нужна
-  чтобы избежать конфликты номеров всплывающих окон. А по принципу открытости-закрытости, которому должны подчиняться все проекты, написанные на js,
-  расширение проекта никак не должно затрагивать старый код. Поэтому к DOM-элементам надо обращаться по индивидуальным селекторам, отражающим их суть,
-  а не номер, и этот селектор, в соответствии с системой БЭМ, должен быть классом, а не идентификатором. Индексы можно использовать только при переборе
-  коллекции элементов в цикле.
-  Устраните использование индексов DOM-элементов во всём проекте. */
+  const cardList = new CardList(placesContainer);
 
-  //Исправил на названия классов, но, знаю что (вроде бы) можно делать через bind. Эти темы будут в следующих спринтах, потому пока боюсь за это браться.
+  const personValidity = new FormValidator(formPerson);
+  const placeValidity = new FormValidator(formPlace);
+  personValidity.setEventListeners();
+  placeValidity.setEventListeners();
 
-  popup.classList.toggle('popup_is-opened');
-  popup.querySelector('.popup__close').addEventListener('click', e => {
-    popup.classList.remove('popup_is-opened');
+  //Функции
+  function openImagePopup(imageUrl) {
+    popupImage.open(imageUrl);
+  }
+
+  //Отрендерить начальные карточки
+  const cardElements = initialCards.map(cardData => new Card(cardData, template, openImagePopup).create());
+  cardList.render(cardElements);
+
+  // Открыть нужный попап
+  /*
+    Можно лучше: здесь и далее вынести все обработчики из addEventListener в отдельные именованные функции -- исправил
+  */ 
+  //Слушатели
+  document.querySelector('.user-info__edit-button').addEventListener('click', e => {
+    userInfo.updateUserInputs();
+    popupPerson.open();
+    personValidity.resetErrors();
+    personValidity.setSubmitButtonState();
+    
   });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      popup.classList.remove('popup_is-opened');
-    };
+
+  formPerson.addEventListener('submit', event => {
+    event.preventDefault();
+    userInfo.setUserInfo(inputPersonName.value, inputPersonJob.value);
+    userInfo.updateUserInfo();
+    formPerson.reset();
+    popupPerson.close();
+  })
+
+
+  document.querySelector('.user-info__button').addEventListener('click', e => {
+    popupPlace.open();
+    formPlace.reset();
+    placeValidity.resetErrors();
+    placeValidity.setSubmitButtonState(true);
   });
-};
+
+  formPlace.addEventListener('submit', event => {
+    event.preventDefault();
+    cardList.addCard(new Card({
+        name: inputPlaceName.value, 
+        link: inputPlaceLink.value
+      }, template, openImagePopup).create());
+    popupPlace.close();
+  })
+
+})();
+
+/*
+В целом отличная работа, большая часть задания работает верно, но есть несколько замечаний:
+
+Наша команда приносит извинения, при проверке работы на предыдущем спринте были пропущены следующие ошибки:
+	Надо исправить: кнопка в форме становится активна, если одно поля пустое и при этом редактировать другое поле т.к. для задания активности кнопки
+	используется только текущее проверяемое поля, а должно проверяться, что оба поля валидны
+	Для решения этой проблемы можно использовать метод checkValidity у валидируемой формы 
+	https://developer.mozilla.org/ru/docs/Web/Guide/HTML/%D0%A4%D0%BE%D1%80%D0%BC%D1%8B_%D0%B2_HTML
+	Который проверяет, что валидны все поля формы
+Данные исправления необходимо внести, т.к в дальнейшем вы можете столкнуться с проблемами при выполнении заданий и сдачи проектных и дипломной работы
+Для исправления этого замечания попросил добавить Вам несколько дней к дедлайну 
+
+Замечания по 8 проектной работе:
+Класс Card
+	Надо исправить:
+	- если в функции нужен объект event, нужно его явно указывать как параметр  функции
+	- при удалении элемента со страницы удалять с него обработчики
+	- класс Card не должен напрямую обращаться к методам Popup, передавать колбэк в класс Card на открытие попапа
+	- не вызывать добавление карточки в классе Card, из метода create возвращать созданный DOM элемент, а script.js показал как добавлять
+    карточки в контейнер не передавая cardList в класс Card
+    
+
+	Можно лучше:
+	- в конструктор  карточки лучше передавать не отдельные параметры, а сразу весь объект
+	- лучше привязать контекст обработчиков событий к контексту класса
+	
+Класс CardList
+	Надо исправить:
+	- метод addCard должен добавлять одну карточку в контейнер
+	- метод render отрисовывает массив переданных карточек вызывая addCard
+	
+	Можно лучше:
+	- массив startCards лучше передавать не в конструктор, а в метод render
+	
+Класс FormValidator
+	Надо испарвить:
+	- при вызове метода resetErrors нужно очищать не вообще все ошибки на странице, а
+      только ошибки в форме для которой создан экзмепляр класса
+	- исправить проблемы с валидацией которые описаны выше
+	
+Класс Popup
+	Надо испарвить:
+	- привел пример как сделать класс Popup отвечающим принципу единственной ответсвенности
+	
+Класс UserInfo
+	Надо испарвить:
+	- передавать используемые DOM жлементы как параметры конструктора класса, а не использовать глобальные переменые
+	- в метод setUserInfo передавать данные как параметры, а не хардкордить там форму
+	
+Файл scripts.js
+	Надо испарвить:
+	- валидация должна настраиваться один раз, а не при каждом открытии попапа
+	- использовать экземпляр класса UserInfo, а не создавать его каждый раз при открытии попапа
+	- реорганизовать работу с попапами как показано в классе Popup
+	- когда код расположен в разных файлах, его нужно 
+	заключать в модули, т.к. если файлов будет много, то в разных 
+	файлах могут появится функции или переменные с одинаковыми именами,
+	они будут переопределять друг друга. Модуль должен предоставлять
+	наружу только минимально необходимый api
+	Для создании модулей можно воспользоваться IIFE, подробнее:
+	https://learn.javascript.ru/closures-module
+	https://habr.com/ru/company/ruvds/blog/419997/ 
+	Нужно обернуть в модули как минимум содержимое файла script.js
+	Оборачивание кода в IIFE не позволит глобально использовать переменные объявленные в нем и
+	и заставит явно передавать их туда, где они необходимы, как например в конструкторы классов
+	
+*/
+
+/**
+ Исправил все недочеты (по сути переписал всю работу, хех), спасибо Вам за шикарное ревью! Очень многое понял, теперь ООП не кажется таким страшным :)
+ */
 
 
-// Валидация, любимая
+/*
+  Отлично, по ООП все замечания исправлены, рад, что ревью помогло разобраться,
+  но осталось замечание по валидации:
+  Надо исправить:
+  - поле ссылки ненужно валидировать по длинне http://prntscr.com/sqjzic
+  подробнее см. замечание в FormValidator, приношу извинения если пропусти это на прошлом ревью --Исправил
 
-// Управление кнопками
-const blockButton = function(button, status) {
-  if (status === true) {
-    button.classList.remove('popup__button_active');
-    button.disabled = true;
-    button.style.cursor = 'not-allowed';
-  } else {
-    button.classList.add('popup__button_active');
-    button.disabled = false;
-    button.style.cursor = 'pointer';
-  };
-};
+  - так же в классе Card Вы забыли удалить обработчик с this._view.querySelector('.place-card__image') -- Исправил.
 
-//Сбросить все ошибки на всех формах
-function resetErrors() {
-  document.querySelectorAll('.error-message').forEach(item => {
-    item.textContent = '';
-  });
-};
+*/
 
-//Обнулить поля и заблочить кнопку в place форме
-function resetPlaceFields() {
-  inputPlaceName.value = '';
-  inputPlaceLink.value = '';
-  blockButton(placeButton, true);
-};
+/*
+  Теперь валидация работает верно
+  
+  Если захотите углубиться в тему ООП и рефакторинга оставлю пару ссылок:
+  https://ota-solid.now.sh/ - принципы проектирования SOLID применяемые для проектирования ООП программ  
+  https://refactoring.guru/ru/design-patterns - паттерны проектирования
+  https://refactoring.guru/ru/refactoring - рефакторинг
 
-// Для person
-function actualizePersonFields() {
-  inputPersonName.value = userInfoName.textContent;
-  inputPersonAbout.value = userInfoJob.textContent;
-  blockButton(personButton, false);
-  resetErrors();
-};
-
-const personValidity = function() {
-  const currentInput = event.target;
-  const errorELem = currentInput.parentNode.querySelector(`#error-${currentInput.id}`);
-  if(currentInput.value.length === 0 || currentInput.value.length === 0) {
-    currentInput.setCustomValidity(errorMessages.empty);
-    blockButton(personButton, true);
-  } else if(currentInput.value.length < 2 || currentInput.value.length > 30) {
-    currentInput.setCustomValidity(errorMessages.tooShort);
-    blockButton(personButton, true);
-  } else {
-    currentInput.setCustomValidity('');
-    blockButton(personButton, false);
-  };
-  errorELem.textContent = currentInput.validationMessage;
-};
-
-// Для place
-const placeValidity = function() {
-  if (inputPlaceName.value.length === 0 || inputPlaceLink.value.length === 0) {
-    blockButton(placeButton, true);
-  } else {
-    blockButton(placeButton, false);
-  };
-};
-
-
-// Слушатели
-formPerson.addEventListener('input', personValidity);
-formPlace.addEventListener('input', placeValidity);
-
-
-document.querySelector('.user-info__edit-button').addEventListener('click', e => { showPopup(popupPerson); actualizePersonFields(); });
-document.querySelector('.user-info__button').addEventListener('click', e => { showPopup(popupPlace); resetPlaceFields(); });
-
-formPerson.addEventListener('submit', function(event) {
-  event.preventDefault();
-  showPopup(popupPerson);
-  person();
-});
-
-formPlace.addEventListener('submit', function(event) {
-  userPlaceCard();
-  event.preventDefault();
-  showPopup(popupPlace);
-});
-
-// Вызовы функций и методов
-changeUserInfo();
-
-initialCards.forEach(function(item) {
-  renderPlaceCard(item);
-});
-
-
-
-/*REVIEW. Резюме.
-
-Работа неплохая. Функционал, требуемый по заданию, работает, кроме до конца правильной валидации обеих форм.
-
-Так же требуется оптимизация проекта.
-
-Что надо исправить.
-
-1. Устранить использование индексов DOM-элементов во всём проекте (подробности в ревью в коде showPopup). --Исправил
-
-2. По чеклисту требуется, чтобы на формах не появлялись системные сообщения об ошибках. Сейчас они появляются на форме карточки.
-Сделайте минимальную валидацию формы добавления новой карточки. По заданию даже не требуется полной валидации этой формы, достаточно
-только сделать так, чтобы кнопка сабмита этой формы была заблокирована, если хотя бы одно из полей форм пустое, и была разблокирована,
-если в обоих полях есть какая-то информация, то есть оба поля непустые. Сообщения об ошибках при минимальной валидации высвечиваться
-не должны.
-
---Сделал минимально, пытался сделать полную валидацию, так и не вышло :(
-
-
-
-
-3. Нужно до конца правильной сделать валидацию формы профиля. Сейчас она работает правильно только наполовину, только когда Вы выходите
-из формы по сабмиту, но, если выйти из формы по крестику, предварительно сделав информацию в полях невалидной, то при повторном входе в
-форму информация со страницы на неё не переносится, хотя по заданию эта информация должна переноситься на форму в любом случае при её открытии.
-На форме видны сообщения об ошибках, оставшиеся от предыдущего неправильного ввода, чего быть не должно, так как на форме при её открытии всегда должна находиться валидная информация. Поэтому в слушателе открытия формы профиля, нужно переносить информацию со страницы в поля формы, производить удаление сообщений об ошибках, делать кнопку сабмита активной и чёрного цвета. Это можно будет сделать с помощью вызовов функции валидации полей формы профиля в слушателе события открытия формы. --Исправил
-
-Что можно улучшить.
-
-1. Обработчиками событий карточки лучше делать именованные функции (подробности в ревью в коде renderPlaceCard). --Исправил
+  Успехов в дальнейшем обучении!
 
 */

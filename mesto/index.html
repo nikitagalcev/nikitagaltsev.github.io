@@ -16,15 +16,33 @@
       <div class="user-info">
         <div class="user-info__photo"></div>
         <div class="user-info__data">
-          <h1 class="user-info__name">Jaques Causteau</h1>
-          <p class="user-info__job">Sailor, Researcher</p>
+          <h1 class="user-info__name">
+
+          </h1>
+          <p class="user-info__job">
+            
+          </p>
           <button class="button user-info__edit-button" type="button">Edit</button>
         </div>
         <button class="button user-info__button">+</button>
       </div>
     </div>
 
-    <div class="places-list root__section"></div>
+    <div class="places-list root__section">
+
+      <template id="place-template">
+        <div class="place-card">
+          <div class="place-card__image">
+            <button class="place-card__delete-icon"></button>
+          </div>
+          <div class="place-card__description">
+            <h3 class="place-card__name"></h3>
+            <button class="place-card__like-icon"></button>
+          </div>
+        </div>
+      </template>
+
+    </div>
 
     <div class="popup popup_person">
       <div class="popup__content">
@@ -50,7 +68,7 @@
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="place" novalidate>
           <div class="input-container ">
-            <input id="place" type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название" required>
+            <input id="place" type="text" name="name" minlength="2" maxlength="30" class="popup__input popup__input_type_name" placeholder="Название" required>
             <span id="error-place" class="error-message"></span>
           </div>
           <div class="input-container">
@@ -72,5 +90,12 @@
   </div>
 </body>
 
+<script src='initialCards.js'></script>
+<script src='Card.js'></script>
+<script src='CardList.js'></script>
+<script src='Popup.js'></script>
+<script src='ImagePopup.js '></script>
+<script src='UserInfo.js'></script>
+<script src='FormValidator.js'></script>
 <script src="script.js"></script>
 </html>
