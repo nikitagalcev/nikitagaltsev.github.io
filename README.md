@@ -1,14 +1,14 @@
 # nikitagaltsev.github.io
 Учебные проекты для Яндекс.Практикум (обновляется)
 ***
-<p>Лендинги для практики адаптивной и семантичной вёрстки + методология БЭМ</p>
-<a>https://nikitagaltsev.github.io/freelance/</a> \n
-<a>https://nikitagaltsev.github.io/russia-trip/</a>
+Лендинги для практики адаптивной и семантичной вёрстки + методология БЭМ \n
+https://nikitagaltsev.github.io/freelance/ \n
+https://nikitagaltsev.github.io/russia-trip/ 
 ***
-<p>Лендинг для практики семантичной верстки и методологии БЭМ</p>
-<a>https://nikitagaltsev.github.io/learning-techniques/</a>
+Лендинг для практики семантичной верстки и методологии БЭМ \n
+https://nikitagaltsev.github.io/learning-techniques/
 ***
-<p>Проект для практики ООП и рефакторинга (до этого использовался функциональный подход)</p>
-<a>https://nikitagaltsev.github.io/mesto/</a>
+Проект для практики ООП и рефакторинга (до этого использовался функциональный подход) \n
+https://nikitagaltsev.github.io/mesto/
 ***
 
