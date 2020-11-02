@@ -1,6 +1,7 @@
 # Учебные проекты для Яндекс.Практикум
 ***
 Лендинги для практики адаптивной и семантичной вёрстки + методология БЭМ. Стек - HTML5, CSS3, Native JavaScript
+
 https://nikitagaltsev.github.io/freelance/  
 https://nikitagaltsev.github.io/russia-trip/  
 ***
